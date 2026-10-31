@@ -4,6 +4,12 @@
  */
 package sistema.view;
 
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import sistema.controller.LoginController;
+
 /**
  *
  * @author marcelo
@@ -61,7 +67,7 @@ public class LoginView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmailActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldEmailActionPerformed
 
     private void jPasswordFieldSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldSenhaActionPerformed
@@ -69,7 +75,18 @@ public class LoginView extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordFieldSenhaActionPerformed
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
-        // TODO add your handling code here:
+        
+        if(jTextFieldEmail.getText().matches("") ||jPasswordFieldSenha.getText().matches("")){
+            JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos!");
+            
+        } else {
+            try {
+                LoginController login = new LoginController();
+                login.loginUsuario(this);
+            } catch (SQLException ex) {
+                System.getLogger(LoginView.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+            }
+        }
     }//GEN-LAST:event_jButtonEntrarActionPerformed
 
     private void jButtonCriarContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCriarContaActionPerformed
@@ -77,6 +94,23 @@ public class LoginView extends javax.swing.JFrame {
         telaDeCadastro.setVisible(true);
     }//GEN-LAST:event_jButtonCriarContaActionPerformed
 
+    public JPasswordField getjPasswordFieldSenha() {
+        return jPasswordFieldSenha;
+    }
+
+    public void setjPasswordFieldSenha(JPasswordField jPasswordFieldSenha) {
+        this.jPasswordFieldSenha = jPasswordFieldSenha;
+    }
+
+    public JTextField getjTextFieldEmail() {
+        return jTextFieldEmail;
+    }
+
+    public void setjTextFieldEmail(JTextField jTextFieldEmail) {
+        this.jTextFieldEmail = jTextFieldEmail;
+    }
+    
+    
     /**
      * @param args the command line arguments
      */

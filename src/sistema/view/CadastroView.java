@@ -4,6 +4,12 @@
  */
 package sistema.view;
 
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import sistema.controller.LoginController;
+
 /**
  *
  * @author marcelo
@@ -56,7 +62,18 @@ public class CadastroView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
-        // TODO add your handling code here:
+        
+        if(jTextFieldNome.getText().matches("") || jTextFieldEmail.getText().matches("") || jPasswordFieldSenha.getText().matches("")){
+            JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos!");
+        } else {
+            try {
+            LoginController cadastro = new LoginController();
+            cadastro.cadastroUsuario(this);
+            } catch (SQLException ex) {
+                System.getLogger(CadastroView.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+            }
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
 
     private void jTextFieldNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeActionPerformed
@@ -67,6 +84,30 @@ public class CadastroView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordFieldSenhaActionPerformed
 
+    public JPasswordField getjPasswordFieldSenha() {
+        return jPasswordFieldSenha;
+    }
+
+    public void setjPasswordFieldSenha(JPasswordField jPasswordFieldSenha) {
+        this.jPasswordFieldSenha = jPasswordFieldSenha;
+    }
+
+    public JTextField getjTextFieldEmail() {
+        return jTextFieldEmail;
+    }
+
+    public void setjTextFieldEmail(JTextField jTextFieldEmail) {
+        this.jTextFieldEmail = jTextFieldEmail;
+    }
+
+    public JTextField getjTextFieldNome() {
+        return jTextFieldNome;
+    }
+
+    public void setjTextFieldNome(JTextField jTextFieldNome) {
+        this.jTextFieldNome = jTextFieldNome;
+    }
+    
     /**
      * @param args the command line arguments
      */
