@@ -29,19 +29,23 @@ public class LoginView extends javax.swing.JFrame {
     private void initComponents() {
 
         jButtonEntrar = new javax.swing.JButton();
+        jButtonCriarConta = new javax.swing.JButton();
         jPasswordFieldSenha = new javax.swing.JPasswordField();
         jTextFieldEmail = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(900, 700));
-        setPreferredSize(new java.awt.Dimension(900, 700));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonEntrar.setContentAreaFilled(false);
         jButtonEntrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonEntrar.addActionListener(this::jButtonEntrarActionPerformed);
         getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 420, 340, 40));
+
+        jButtonCriarConta.setContentAreaFilled(false);
+        jButtonCriarConta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButtonCriarConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 520, 120, 30));
 
         jPasswordFieldSenha.addActionListener(this::jPasswordFieldSenhaActionPerformed);
         getContentPane().add(jPasswordFieldSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(489, 320, 345, 50));
@@ -93,6 +97,7 @@ public class LoginView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonCriarConta;
     private javax.swing.JButton jButtonEntrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPasswordField jPasswordFieldSenha;
