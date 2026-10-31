@@ -10,11 +10,20 @@ package sistema.model;
  */
 public class Login {
     
-    String email, senha;
+    String nome, email, senha;
     
-    public Login(String email, String senha) {
+    public Login(String nome, String email, String senha) {
+        this.nome = nome;
         this.email = email;
         this.senha = senha;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getEmail() {
