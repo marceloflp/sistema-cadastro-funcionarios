@@ -28,8 +28,8 @@ public class LoginView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButtonEntrar = new javax.swing.JButton();
         jButtonCriarConta = new javax.swing.JButton();
+        jButtonEntrar = new javax.swing.JButton();
         jPasswordFieldSenha = new javax.swing.JPasswordField();
         jTextFieldEmail = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -38,14 +38,15 @@ public class LoginView extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(900, 700));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButtonCriarConta.setContentAreaFilled(false);
+        jButtonCriarConta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCriarConta.addActionListener(this::jButtonCriarContaActionPerformed);
+        getContentPane().add(jButtonCriarConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 520, 120, 30));
+
         jButtonEntrar.setContentAreaFilled(false);
         jButtonEntrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButtonEntrar.addActionListener(this::jButtonEntrarActionPerformed);
         getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 420, 340, 40));
-
-        jButtonCriarConta.setContentAreaFilled(false);
-        jButtonCriarConta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jButtonCriarConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 520, 120, 30));
 
         jPasswordFieldSenha.addActionListener(this::jPasswordFieldSenhaActionPerformed);
         getContentPane().add(jPasswordFieldSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(489, 320, 345, 50));
@@ -70,6 +71,11 @@ public class LoginView extends javax.swing.JFrame {
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonEntrarActionPerformed
+
+    private void jButtonCriarContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCriarContaActionPerformed
+        CadastroView telaDeCadastro = new CadastroView();
+        telaDeCadastro.setVisible(true);
+    }//GEN-LAST:event_jButtonCriarContaActionPerformed
 
     /**
      * @param args the command line arguments
