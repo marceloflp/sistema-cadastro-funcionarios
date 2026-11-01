@@ -22,15 +22,15 @@ public class LoginDAO {
     
         String senhaCriptografada = Criptografia.criptografar(senha);
     
-    try (Connection conexao = new Conexao().getConnection();
-         PreparedStatement statement = conexao.prepareStatement(sql)) {
-        
-        statement.setString(1, nome);
-        statement.setString(2, email);
-        statement.setString(3, senhaCriptografada);        
-        statement.executeUpdate();
-        System.out.println("Usuário cadastrado!");
-    }
+        try (Connection conexao = new Conexao().getConnection();
+             PreparedStatement statement = conexao.prepareStatement(sql)) {
+
+            statement.setString(1, nome);
+            statement.setString(2, email);
+            statement.setString(3, senhaCriptografada);        
+            statement.executeUpdate();
+            System.out.println("Usuário cadastrado!");
+        }
         
     }
     
