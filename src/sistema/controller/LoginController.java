@@ -27,12 +27,12 @@ public class LoginController {
  
     }
     
-    public void loginUsuario(LoginView view) throws SQLException{
+    public boolean loginUsuario(LoginView view) throws SQLException{
         
         Connection conexao = new Conexao().getConnection();
         LoginDAO login = new LoginDAO();
         
-        login.login(view.getjTextFieldEmail().getText(), view.getjPasswordFieldSenha().getText());
+        return login.login(view.getjTextFieldEmail().getText(), view.getjPasswordFieldSenha().getText());
     }
     
 }

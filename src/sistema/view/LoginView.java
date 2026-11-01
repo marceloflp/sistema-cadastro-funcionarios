@@ -82,7 +82,10 @@ public class LoginView extends javax.swing.JFrame {
         } else {
             try {
                 LoginController login = new LoginController();
-                login.loginUsuario(this);
+                if (login.loginUsuario(this)) {
+                    new FuncionariosView().setVisible(true);
+                    dispose();
+                }
             } catch (SQLException ex) {
                 System.getLogger(LoginView.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
             }
