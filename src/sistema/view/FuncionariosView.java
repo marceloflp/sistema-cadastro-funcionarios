@@ -69,7 +69,8 @@ public class FuncionariosView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarFuncionarioActionPerformed
-        // TODO add your handling code here:
+        CadastroFuncionariosView cadastro = new CadastroFuncionariosView();
+        cadastro.setVisible(true);
     }//GEN-LAST:event_jButtonCadastrarFuncionarioActionPerformed
 
     private void configurarTabela() {

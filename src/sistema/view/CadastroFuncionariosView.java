@@ -4,6 +4,10 @@
  */
 package sistema.view;
 
+import javax.swing.JCheckBox;
+import javax.swing.JTextField;
+import sistema.controller.FuncionarioController;
+
 /**
  *
  * @author marcelo
@@ -28,7 +32,7 @@ public class CadastroFuncionariosView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBoxFuncionarioAtivo = new javax.swing.JCheckBox();
         jTextFieldNomeCompleto = new javax.swing.JTextField();
         jTextFieldDataAdmissao = new javax.swing.JTextField();
         jTextFieldSalario = new javax.swing.JTextField();
@@ -39,11 +43,13 @@ public class CadastroFuncionariosView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jCheckBox1.addActionListener(this::jCheckBox1ActionPerformed);
-        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 294, -1, -1));
+        jCheckBoxFuncionarioAtivo.addActionListener(this::jCheckBoxFuncionarioAtivoActionPerformed);
+        getContentPane().add(jCheckBoxFuncionarioAtivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 294, -1, -1));
 
         jTextFieldNomeCompleto.addActionListener(this::jTextFieldNomeCompletoActionPerformed);
         getContentPane().add(jTextFieldNomeCompleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 140, 407, 40));
+
+        jTextFieldDataAdmissao.addActionListener(this::jTextFieldDataAdmissaoActionPerformed);
         getContentPane().add(jTextFieldDataAdmissao, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 230, 180, 35));
 
         jTextFieldSalario.addActionListener(this::jTextFieldSalarioActionPerformed);
@@ -51,10 +57,12 @@ public class CadastroFuncionariosView extends javax.swing.JFrame {
 
         jButtonCadastrar.setContentAreaFilled(false);
         jButtonCadastrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCadastrar.addActionListener(this::jButtonCadastrarActionPerformed);
         getContentPane().add(jButtonCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 470, 100, 30));
 
         jButtonCancelar.setContentAreaFilled(false);
         jButtonCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCancelar.addActionListener(this::jButtonCancelarActionPerformed);
         getContentPane().add(jButtonCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, 100, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/TelaCadastrarFuncionarios.png"))); // NOI18N
@@ -63,9 +71,9 @@ public class CadastroFuncionariosView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void jCheckBoxFuncionarioAtivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxFuncionarioAtivoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_jCheckBoxFuncionarioAtivoActionPerformed
 
     private void jTextFieldNomeCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeCompletoActionPerformed
         // TODO add your handling code here:
@@ -75,6 +83,53 @@ public class CadastroFuncionariosView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldSalarioActionPerformed
 
+    private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
+        FuncionarioController cadastro = new FuncionarioController();
+        if (cadastro.cadastroFuncionario(this)) {
+        dispose();
+    }
+    }//GEN-LAST:event_jButtonCadastrarActionPerformed
+
+    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButtonCancelarActionPerformed
+
+    private void jTextFieldDataAdmissaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataAdmissaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldDataAdmissaoActionPerformed
+
+    public JCheckBox getjCheckBoxFuncionarioAtivo() {
+        return jCheckBoxFuncionarioAtivo;
+    }
+
+    public void setjCheckBoxFuncionarioAtivo(JCheckBox jCheckBoxFuncionarioAtivo) {
+        this.jCheckBoxFuncionarioAtivo = jCheckBoxFuncionarioAtivo;
+    }
+
+    public JTextField getjTextFieldDataAdmissao() {
+        return jTextFieldDataAdmissao;
+    }
+
+    public void setjTextFieldDataAdmissao(JTextField jTextFieldDataAdmissao) {
+        this.jTextFieldDataAdmissao = jTextFieldDataAdmissao;
+    }
+
+    public JTextField getjTextFieldNomeCompleto() {
+        return jTextFieldNomeCompleto;
+    }
+
+    public void setjTextFieldNomeCompleto(JTextField jTextFieldNomeCompleto) {
+        this.jTextFieldNomeCompleto = jTextFieldNomeCompleto;
+    }
+
+    public JTextField getjTextFieldSalario() {
+        return jTextFieldSalario;
+    }
+
+    public void setjTextFieldSalario(JTextField jTextFieldSalario) {
+        this.jTextFieldSalario = jTextFieldSalario;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -103,7 +158,7 @@ public class CadastroFuncionariosView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCadastrar;
     private javax.swing.JButton jButtonCancelar;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBoxFuncionarioAtivo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextFieldDataAdmissao;
     private javax.swing.JTextField jTextFieldNomeCompleto;
