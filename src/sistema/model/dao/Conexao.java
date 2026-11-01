@@ -39,7 +39,6 @@ public class Conexao {
 
         try (Statement stmt = conexao.createStatement()) {
             stmt.execute(sql);
-            System.out.println("Tabela 'usuarios' verificada/criada com sucesso.");
         } catch (SQLException e) {
             System.err.println("Erro ao criar a tabela: " + e.getMessage());
         }
