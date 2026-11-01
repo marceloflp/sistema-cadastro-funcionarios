@@ -6,8 +6,14 @@ package sistema.view;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.text.NumberFormat;
+import java.util.Locale;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
+import sistema.controller.FuncionarioController;
+import sistema.model.Funcionarios;
 /**
  *
  * @author marcelo
@@ -23,6 +29,8 @@ public class FuncionariosView extends javax.swing.JFrame {
         initComponents();
         
         configurarTabela();
+        
+        carregarFuncionarios();
     }
 
     /**
@@ -70,6 +78,12 @@ public class FuncionariosView extends javax.swing.JFrame {
 
     private void jButtonCadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarFuncionarioActionPerformed
         CadastroFuncionariosView cadastro = new CadastroFuncionariosView();
+        cadastro.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosed(java.awt.event.WindowEvent e) {
+                carregarFuncionarios();   // roda quando o formulário fecha com dispose()
+            }
+        });
         cadastro.setVisible(true);
     }//GEN-LAST:event_jButtonCadastrarFuncionarioActionPerformed
 
@@ -106,7 +120,28 @@ public class FuncionariosView extends javax.swing.JFrame {
         jTableFuncionarios.setFillsViewportHeight(true);
  
     }
+    
+    private void carregarFuncionarios() {
+        DefaultTableModel modelo = (DefaultTableModel) jTableFuncionarios.getModel();
+        modelo.setRowCount(0);
 
+        NumberFormat numero = NumberFormat.getNumberInstance(Locale.forLanguageTag("pt-BR"));
+        numero.setMinimumFractionDigits(2);
+        numero.setMaximumFractionDigits(2);
+
+        try {
+            for (Funcionarios f : new FuncionarioController().listarFuncionarios()) {
+                modelo.addRow(new Object[] {
+                    f.getNomeCompleto(),
+                    f.getDataAdmissaoFormatada(),
+                    numero.format(f.getSalario()),
+                    f.getStatus()
+                });
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Erro ao carregar funcionários: " + ex.getMessage());
+        }
+    }
     
     /**
      * @param args the command line arguments
