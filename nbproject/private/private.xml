@@ -5,8 +5,6 @@
         <group>
             <file>file:/home/marcelo/Documentos/TestePratico/TestePratico-CadastroFuncionarios/src/sistema/model/dao/Conexao.java</file>
             <file>file:/home/marcelo/Documentos/TestePratico/TestePratico-CadastroFuncionarios/src/sistema/view/LoginView.java</file>
-            <file>file:/home/marcelo/Documentos/TestePratico/TestePratico-CadastroFuncionarios/src/sistema/view/FuncionariosView.java</file>
-            <file>file:/home/marcelo/Documentos/TestePratico/TestePratico-CadastroFuncionarios/src/resources/TelaCadastrarFuncionarios.png</file>
             <file>file:/home/marcelo/Documentos/TestePratico/TestePratico-CadastroFuncionarios/src/sistema/view/CadastroFuncionariosView.java</file>
             <file>file:/home/marcelo/Documentos/TestePratico/TestePratico-CadastroFuncionarios/src/sistema/model/Funcionarios.java</file>
             <file>file:/home/marcelo/Documentos/TestePratico/TestePratico-CadastroFuncionarios/src/sistema/model/Login.java</file>
@@ -15,6 +13,9 @@
             <file>file:/home/marcelo/Documentos/TestePratico/TestePratico-CadastroFuncionarios/src/sistema/controller/LoginController.java</file>
             <file>file:/home/marcelo/Documentos/TestePratico/TestePratico-CadastroFuncionarios/src/sistema/controller/FuncionarioController.java</file>
             <file>file:/home/marcelo/Documentos/TestePratico/TestePratico-CadastroFuncionarios/src/sistema/view/CadastroView.java</file>
+            <file>file:/home/marcelo/Documentos/TestePratico/TestePratico-CadastroFuncionarios/src/sistema/util/Criptografia.java</file>
+            <file>file:/home/marcelo/Documentos/TestePratico/TestePratico-CadastroFuncionarios/src/sistema/Main.java</file>
+            <file>file:/home/marcelo/Documentos/TestePratico/TestePratico-CadastroFuncionarios/src/sistema/view/FuncionariosView.java</file>
         </group>
     </open-files>
 </project-private>

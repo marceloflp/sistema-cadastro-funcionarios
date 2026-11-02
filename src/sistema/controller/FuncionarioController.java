@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
 import sistema.model.Funcionarios;
 import sistema.model.dao.Conexao;
 import sistema.model.dao.FuncionariosDAO;
+import sistema.util.LogErro;
 import sistema.view.CadastroFuncionariosView;
 
 /**
@@ -54,7 +55,12 @@ public class FuncionarioController {
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(view, "Informe o salário no formato 4200,00.");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(view, "Erro ao cadastrar: " + ex.getMessage());
+            JOptionPane.showMessageDialog(view, "Erro ao fazer cadastro de funcionário.\n"
+                    + "Verifique a conexão com banco de dados", "Problema com a conexão", JOptionPane.ERROR_MESSAGE);
+            LogErro.erro(
+            "CADASTRO",
+            "Não foi possível realizar cadastro de funcionário.",
+            ex);
         }
         return false;
     }
