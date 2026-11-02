@@ -68,7 +68,7 @@ Antes de executar a aplicação, tenha instalado:
 
 ## Como executar
 
-1. Clone no repositório: 
+1. Clone o repositório: 
 ```bash
 git clone https://github.com/marceloflp/sistema-cadastro-funcionarios.git
 ```
