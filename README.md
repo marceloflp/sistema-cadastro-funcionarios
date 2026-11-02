@@ -86,16 +86,16 @@ docker compose up -d
 ## TELAS DA APLICAÇÃO
 
 ### Tela de Login
-![Tela de Login](resources/LoginTela.png)
+![Tela de Login](src/resources/LoginTela.png)
 
 ### Tela de Cadastro de Usuários
-![Tela de Cadastro de usuários](resources/TelaCadastro.png)
+![Tela de Cadastro de usuários](src/resources/TelaCadastro.png)
 
 ### Tela de Funcionários
-![Tela de listagem de funcionários cadastrados](resources/TelaFuncionarios.png)
+![Tela de listagem de funcionários cadastrados](src/resources/TelaFuncionarios.png)
 
 ### Tela de Cadastro de Funcionários
-1[Tela com formulário para cadastrar um novo funcionário](resources/TelaCadastroFuncionarios.png)
+![Tela com formulário para cadastrar um novo funcionário](src/resources/TelaCadastroFuncionarios.png)
 
 ---
 
