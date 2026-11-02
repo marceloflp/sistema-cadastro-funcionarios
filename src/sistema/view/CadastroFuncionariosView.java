@@ -76,11 +76,11 @@ public class CadastroFuncionariosView extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBoxFuncionarioAtivoActionPerformed
 
     private void jTextFieldNomeCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeCompletoActionPerformed
-        // TODO add your handling code here:
+        jTextFieldDataAdmissao.requestFocus();
     }//GEN-LAST:event_jTextFieldNomeCompletoActionPerformed
 
     private void jTextFieldSalarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSalarioActionPerformed
-        // TODO add your handling code here:
+        jButtonCadastrar.doClick();
     }//GEN-LAST:event_jTextFieldSalarioActionPerformed
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
@@ -95,7 +95,7 @@ public class CadastroFuncionariosView extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     private void jTextFieldDataAdmissaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataAdmissaoActionPerformed
-        // TODO add your handling code here:
+        jTextFieldSalario.requestFocus();
     }//GEN-LAST:event_jTextFieldDataAdmissaoActionPerformed
 
     public JCheckBox getjCheckBoxFuncionarioAtivo() {

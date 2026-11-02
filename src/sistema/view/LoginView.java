@@ -67,11 +67,11 @@ public class LoginView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextFieldEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmailActionPerformed
-
+        jPasswordFieldSenha.requestFocus();
     }//GEN-LAST:event_jTextFieldEmailActionPerformed
 
     private void jPasswordFieldSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldSenhaActionPerformed
-        // TODO add your handling code here:
+        jButtonEntrar.doClick();
     }//GEN-LAST:event_jPasswordFieldSenhaActionPerformed
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
@@ -85,6 +85,8 @@ public class LoginView extends javax.swing.JFrame {
                 if (login.loginUsuario(this)) {
                     new FuncionariosView().setVisible(true);
                     dispose();
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "ERRO: E-mail ou Senha incorreto. Tente novamente!");   
                 }
             } catch (SQLException ex) {
                 System.getLogger(LoginView.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
