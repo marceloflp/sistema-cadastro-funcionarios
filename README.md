@@ -83,22 +83,6 @@ docker compose up -d
 
 ---
 
-## TELAS DA APLICAÇÃO
-
-### Tela de Login
-![Tela de Login](src/resources/LoginTela.png)
-
-### Tela de Cadastro de Usuários
-![Tela de Cadastro de usuários](src/resources/TelaCadastro.png)
-
-### Tela de Funcionários
-![Tela de listagem de funcionários cadastrados](src/resources/TelaFuncionarios.png)
-
-### Tela de Cadastro de Funcionários
-![Tela com formulário para cadastrar um novo funcionário](src/resources/TelaCadastroFuncionarios.png)
-
----
-
 ## Observações
 
 - O projeto é uma aplicação desktop; não é necessário executar um servidor web.
