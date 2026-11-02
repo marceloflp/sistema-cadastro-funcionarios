@@ -15,7 +15,7 @@ import java.sql.Statement;
  */
 public class Conexao {
     
-    private final String URL = "jdbc:postgresql://localhost:5432/db_aplicacao";
+    private final String URL = "jdbc:postgresql://localhost:5433/db_aplicacao";
     private final String userDB = "postgres";
     private final String passDB = "admin";
             
